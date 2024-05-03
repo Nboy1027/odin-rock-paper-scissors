@@ -3,6 +3,7 @@ function getRandomInt(max) {
 }
 
 
+// Takes a random  number and assigns a choice
 
 function ComputerChoice() {
 
@@ -32,6 +33,15 @@ function ComputerChoice() {
 
 }
 
-ComputerChoice();
 
-console.log(ComputerChoice());
+function humanChoice() {
+
+let Hchoice = prompt("Choose 'Rock', 'Paper' or 'Scissors'")
+
+Hchoice=Hchoice.charAt(0).toUpperCase() + Hchoice.slice(1).toLowerCase();
+
+return Hchoice;
+}
+
+
+console.log(humanChoice());
