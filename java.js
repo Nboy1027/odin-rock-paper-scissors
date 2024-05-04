@@ -3,6 +3,8 @@ let humanScore=0;
 
 let computerScore=0;
 
+let round =1;
+
 
 
 
@@ -43,6 +45,7 @@ function ComputerChoice() {
 
 }
 
+// Takes data from a prompt and cleans the text 
 
 function humanChoice(Hchoice) {
 
@@ -50,6 +53,7 @@ Hchoice=Hchoice.charAt(0).toUpperCase() + Hchoice.slice(1).toLowerCase();
 return Hchoice;
 }
 
+// Plays a single round while adding score.
 
 
 function playRound(humanChoice, ComputerChoice){
@@ -91,19 +95,49 @@ else {
 }
 }
 
-
-const humanSelection= humanChoice(prompt("Choose 'Rock', 'Paper' or 'Scissors'"));
-const computerSelection = ComputerChoice();
-
-console.log("You Chose: "+ humanSelection);
-console.log("Your Oponent Chose: " +computerSelection);
+// Play an entire game for 5 rounds
 
 
+function playGame(){
+while (round<=5){
 
-playRound(humanSelection, computerSelection);
+    
 
-console.log("Human Score: " + humanScore + " | Oponenet Score: " + computerScore);
+    console.log("Round: " + round);
+
+    const humanSelection= humanChoice(prompt("Choose 'Rock', 'Paper' or 'Scissors'"));
+    const computerSelection = ComputerChoice();
+    
+    console.log("You Chose: "+ humanSelection);
+    console.log("Your Oponent Chose: " +computerSelection);
+    
+    
+    
+    playRound(humanSelection, computerSelection);
+    
+    console.log("Human Score: " + humanScore + " | Oponenet Score: " + computerScore);
+
+    round = humanScore + computerScore + 1;
+    
+}
+if (humanScore>computerScore){
+
+    console.log("Congrats You won!")
+
+}
+
+    else {
+        console.log("You Lost The Game!")
+    }
 
 
+
+
+
+}
+
+playGame();
+
+    
 
 
