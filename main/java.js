@@ -133,8 +133,7 @@ if (humanScore>computerScore){
 
 
 
-
-}
+ }
 
 playGame();
 
